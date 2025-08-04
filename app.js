@@ -23,7 +23,6 @@ const app = express();
 
 // Sử dụng các middleware cơ bản
 app.use(configCors);
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());

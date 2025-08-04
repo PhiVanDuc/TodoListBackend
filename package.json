@@ -10,5 +10,27 @@
     "express": "^5.1.0",
     "morgan": "^1.10.1",
     "nodemon": "^3.1.10"
-  }
+  },
+  "name": "express-api-template",
+  "version": "1.0.0",
+  "description": "Express is built with JavaScript and mainly used for API development.",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhiVanDuc/express-api-template.git"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "template",
+    "backend",
+    "nodejs"
+  ],
+  "author": "Phi Van Duc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhiVanDuc/express-api-template/issues"
+  },
+  "homepage": "https://github.com/PhiVanDuc/express-api-template#readme"
 }

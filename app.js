@@ -11,6 +11,7 @@ const configCors = require("./libs/config-cors");
 
 // Import router
 const indexRouter = require("./routes/index");
+const apiRouter = require("./routes/api");
 
 // Import các middleware xử lý lỗi
 const {
@@ -30,26 +31,27 @@ app.use(express.urlencoded({ extended: false }));
 
 // Sử dụng các router
 app.use("/", indexRouter);
+app.use("/api", apiRouter);
 
 // Sử dụng các middleware xử lý lỗi
 app.use(notFoundHandler);
 app.use(generalErrorHandler);
 
 // Tạo server và lắng nghe port
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
-server.listen(process.env.PORT || 3001, () => {
-    console.log(`Server đang chạy trên cổng ${process.env.PORT || 3001}`);
-});
+// server.listen(process.env.PORT || 3001, () => {
+//     console.log(`Server đang chạy trên cổng ${process.env.PORT || 3001}`);
+// });
 
 // Sử dụng mrcert để dùng giao thức https (nếu cần)
-// https.createServer(
-//     {
-//         key: fs.readFileSync("dev.com+1-key.pem"),
-//         cert: fs.readFileSync("dev.com+1.pem")
-//     },
-//     app
-// )
-// .listen(process.env.PORT || 3001, () => {
-//     console.log(`Server đang chạy trên cổng ${process.env.PORT || 3001}`);
-// })
+https.createServer(
+    {
+        key: fs.readFileSync("dev.com+1-key.pem"),
+        cert: fs.readFileSync("dev.com+1.pem")
+    },
+    app
+)
+.listen(process.env.PORT || 3001, () => {
+    console.log(`Server đang chạy trên cổng ${process.env.PORT || 3001}`);
+})

@@ -1,9 +1,8 @@
 const cors = require("cors");
 
 const configCors = cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:5173",
     methods: ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true,
     optionsSuccessStatus: 200
 });
 

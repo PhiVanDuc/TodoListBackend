@@ -38,20 +38,20 @@ app.use(notFoundHandler);
 app.use(generalErrorHandler);
 
 // Tạo server và lắng nghe port
-// const server = http.createServer(app);
+const server = http.createServer(app);
 
-// server.listen(process.env.PORT || 3001, () => {
-//     console.log(`Server đang chạy trên cổng ${process.env.PORT || 3001}`);
-// });
+server.listen(process.env.PORT || 3001, () => {
+    console.log(`Server đang chạy trên cổng ${process.env.PORT || 3001}`);
+});
 
 // Sử dụng mrcert để dùng giao thức https (nếu cần)
-https.createServer(
-    {
-        key: fs.readFileSync("dev.com+1-key.pem"),
-        cert: fs.readFileSync("dev.com+1.pem")
-    },
-    app
-)
-.listen(process.env.PORT || 3001, () => {
-    console.log(`Server đang chạy trên cổng ${process.env.PORT || 3001}`);
-})
+// https.createServer(
+//     {
+//         key: fs.readFileSync("dev.com+1-key.pem"),
+//         cert: fs.readFileSync("dev.com+1.pem")
+//     },
+//     app
+// )
+// .listen(process.env.PORT || 3001, () => {
+//     console.log(`Server đang chạy trên cổng ${process.env.PORT || 3001}`);
+// })
